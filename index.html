@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>三亚</title>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<body>
+<div id="page"> 
+<div class="banner"><img src="images/banner.jpg" /></div>
+
+<div class="nav">
+<ul>
+<li><a href="index.html">首页</a></li>
+<li><a href="ziyuan.html">自然资源</a></li>
+<li><a href="wenhua.html">文化资源</a></li>
+<li><a href="jingdian.html">旅游景点</a></li>
+<li><a href="zuozhe.html">地理环境</a></li>
+<li><a href="fengguang.html">风光图片</a></li>
+<li><a href="shipin.html">视频</a></li>
+<li><a href="gouwu.html">购物</a></li>
+</ul>
+</div>
+
+<div class="content">
+<div class="leftcontent">
+  <p><img src="images/left1.jpg" /></p>
+  <p>&nbsp;</p>
+  <p>中文名称：三亚</p>
+  <p>外文名称：Sanya</p>
+  
+  <p>下辖地区：吉阳区、崖州区、天涯区、海棠区</p>
+  <p>政府驻地：三亚市吉阳区新风街257号</p>
+  <p>城市名片：美丽三亚、浪漫天涯 </p>
+  <p>邮政区码：572000 </p>
+  <p>地理位置：海南岛南端[</p>
+  <p>面    积：1919.58平方公里</p>
+  <p>&nbsp;</p>
+  <p><img src="images/left2.jpg" />
+      </p>
+</div>
+
+<div class="rightcontent">
+<h1>三亚介绍</h1>
+<div class="tu">
+  <script type="text/javascript" language="JavaScript">
+
+var widths=660;    
+var w=2;
+var widthss=widths+w;
+var heights=210; 
+var heightss=heightss+w;
+var heightt=20;
+var counts=3;     
+
+img1=new Image();img1.src='images/tu1.jpg';
+url1=new Image();url1.src='#';
+
+
+img2=new Image();img2.src='images/tu2.jpg';
+url2=new Image();url2.src='#';
+
+
+img3=new Image();img3.src='images/tu3.jpg';
+url3=new Image();url3.src='#';
+
+
+
+
+var nn=1; //当前所显示的滚动图
+var key=0;    //标识是否为第一次开始执行
+var tt;    //标识作用
+
+function change_img()
+{
+if(key==0){key=1;} //如果第一次执行KEY=1，表示已经执行过一次了。
+else if(document.all)//document.all仅IE6/7认识，firefox不会执行此段内容
+{
+document.getElementById("pic").filters[0].Apply(); //将滤镜应用到对像上
+document.getElementById("pic").filters[0].Play(duration=2);  //开始转换
+document.getElementById("pic").filters[0].Transition=23;//转换效果
+}
+
+eval('document.getElementById("pic").src=img'+nn+'.src');     //替换图片
+eval('document.getElementById("url").href=url'+nn+'.src'); //替换URL
+ //替换ALT
+
+for (var i=1;i<=counts;i++)
+{
+    document.getElementById("xxjdjj"+i).className='axx';     
+}
+document.getElementById("xxjdjj"+nn).className='bxx';  //将当前页面的ID设置为选中状态
+nn++;
+if(nn>counts){nn=1;}    //如果ID大于总图片数量。则从头开始循环
+tt=setTimeout('change_img()',4000);    //在4秒后重新执行change_img()方法.
+}
+function changeimg(n)//点击黑条上的链接执行的方法。
+{
+nn=n; //当前页面的ID等于传入的N值,
+window.clearInterval(tt); //清除用于循环的TT
+//重新执行change_img();但change_img()内所调用的图片ID已经在此处被修改,会从新ID处开始执行.
+change_img();
+}
+//样式表
+document.write('<style>');
+document.write('.axx{padding:1px 6px;margin-left:3px;border-left:#cccccc 1px solid;font-size:12px;}');
+document.write('a.axx:link,a.axx:visited{text-decoration:none;color:#666;');
+document.write('line-height:12px;font:12px sans-serif;background-color:#eee;border:1px solid #666}');
+
+document.write('.bxx{padding:1px 6px;margin-left:3px;border-left:#cccccc 1px solid;}');
+document.write('a.bxx:link,a.bxx:visited{text-decoration:none;color:#111;');
+document.write('line-height:12px;font:12px sans-serif;background-color:#fff;border:1px solid #111}');
+
+document.write('</style>');
+//内容部分
+document.write('<div style="width:'+widthss+'px;height:'+heights+'px;');
+document.write('overflow:hidden;text-overflow:clip;float:left;">');
+document.write('<div><a id="url" target="_blank"><img id="pic" ');
+document.write('style="border:0;');
+document.write('FILTER: progid:DXImageTransform.Microsoft.RevealTrans (duration=2,transition=23)"');
+document.write(' width='+widths+' height='+heights+' /></a></div>');
+document.write('<div style="filter:alpha(style=1,opacity=10,finishOpacity=90);');
+document.write('width:100%-2px;text-align:right;');
+document.write('top:-19px;position:relative;margin:-5px 9px 0 1px;height:22px;line-height:22px;');
+document.write('z-index:4000;"><div style="height:22px;line-height:22px;padding:2px 0 0 0;">');
+
+
+for(var i=1;i<counts+1;i++)
+{
+document.write('<a href="javascript:changeimg('+i+');" id="xxjdjj'+i+'"');
+document.write(' class="axx" target="_self">'+i+'</a>');
+}
+document.write('</div></div></div>');
+
+
+change_img();
+
+
+</script>
+</div>
+
+<div class="jieshao">
+<p>　　三亚，（Sanya City）位于海南岛的最南端，是中国最南部的热带滨海旅游城市，全国空气质量最好的城市，全国最长寿地区（平均寿命80岁）。三亚市别称鹿城，又被称为“东方夏威夷”，位居中国四大一线旅游城市“三威杭厦”之首，它拥有全海南岛最美丽的海滨风光。东邻陵水县，西接乐东县，北毗保亭县，南临南海。陆地总面积1919.58平方公里，海域总面积6000平方公里，其中规划市区面积约37平方公里。东西长91.6公里，南北宽51公里，常住人口为53.6万人，聚居了汉、黎、苗、回等20多个民族。美丽的三亚市是中国通向世界的门户之一。三亚是海南省南部的中心城市和交通通信枢纽，是中国东南沿海对外开放黄金海岸线上最南端的对外贸易重要口岸。 <br />
+
+三亚拥有亚龙湾、天涯海角游览区、南山文化旅游区、大小洞天风景区、大东海风景区、鹿回头公园、三亚湾风景区、落笔洞游览区及西岛、蜈支洲岛海上乐园等著名景点。</p>
+</div>
+
+
+
+	<div class="jieshao">
+<p>　三亚北靠高山，南临大海，地势自北向南逐渐倾斜，形成一个狭长状的多角形。境内海岸线长258.65公里，有大小港湾19个。主要港口有三亚港、榆林港、南山港、铁炉港、六道港等。主要海湾有三亚湾、海棠湾、亚龙湾、崖州湾、大东海湾、月亮湾等。有大小岛屿40个，主要岛屿10个。</p>
+<p>&nbsp;</p>
+<p>欢迎来到美丽的三亚
+</p>
+	</div>
+</div>
+
+
+<div class="clearit"></div>
+
+<div class="footer"><img src="images/top.jpg"  /></div>
+</div>
+
+
+<embed src='shipin/music.mp3' loop=false aotostart=true mastersound hidden=true width=0 height=0></embed> 
+</div>
+</body>
+</html>
